@@ -1,0 +1,209 @@
+$colorbase: black;
+$colorbase2: #057e86;
+$colorsecundario: white;
+$hoverColor: #024f55; // Nuevo color para los efectos hover
+
+body {
+    background-color: $colorsecundario;
+    color: $colorbase;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    
+    header {
+        background-color: $colorsecundario;
+        color: $colorbase;
+        padding: 20px 0; // Añadido padding para mejorar la estructura visual
+        background-image: url('/IMAGENES/BANERX.png'); // Reemplaza con la ruta de tu imagen
+        background-size: cover; // Ajusta para que la imagen cubra todo el header
+        background-position: center; // Centra la imagen
+        background-repeat: no-repeat; // Evita que la imagen se repita
+
+        h1 {
+            text-align: center;
+            color: $colorbase;
+            font-size: 2.5em; // Tamaño de fuente aumentado
+            text-transform: uppercase;
+            letter-spacing: 2px; // Espaciado de letras para un toque moderno
+        }
+
+        nav {
+            text-align: center;
+            background-color: $colorbase2;
+            color: $colorsecundario;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra para darle profundidad
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    display: inline;
+                    margin: 0 15px; // Mayor separación entre elementos del menú
+                    position: relative; // Para animaciones en hover
+
+                    a {
+                        color: $colorsecundario;
+                        text-decoration: none;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        padding: 5px 10px;
+                        transition: background-color 0.3s ease, color 0.3s ease; // Efecto de transición
+
+                        &:hover {
+                            background-color: $hoverColor;
+                            border-radius: 4px; // Bordes redondeados al hacer hover
+                            color: $colorsecundario;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    main {
+        background-image: url('/IMAGENES/FONDO.jpg'); // Reemplaza con la ruta de tu imagen
+        background-size: cover; // Ajusta para que la imagen cubra todo
+        background-position: center; // Centra la imagen
+        background-repeat: no-repeat; // Evita que se repita la imagen
+        min-height: 100vh; // Asegura que el contenido cubra al menos toda la altura de la pantalla
+        padding: 20px;
+
+        section {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto; // Añade margen para separar las secciones entre sí
+            background-color: white; // Fondo blanco para cada sección
+            border-radius: 10px; // Bordes redondeados
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Añade sombra para darle profundidad a las secciones
+        }
+    }
+
+    footer {
+        background-color: $colorbase2; // Color de fondo secundario
+        color: $colorsecundario; // Texto en color blanco
+        padding: 20px 0;
+        text-align: center;
+      
+        p {
+            font-size: 1em;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+      
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 15px 0;
+      
+            li {
+                display: inline-block;
+                margin: 0 10px;
+                
+                a {
+                    color: $colorsecundario;
+                    text-decoration: none;
+                    font-size: 1.2em;
+                    transition: color 0.3s ease;
+      
+                    &:hover {
+                        color: lighten($colorsecundario, 20%); // Al hacer hover se ilumina un poco
+                    }
+                }
+            }
+        }
+      
+        p:last-child {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: lighten($colorsecundario, 40%); // Texto de derechos reservados con un color más claro
+        }
+        
+        // Estilos para dispositivos pequeños
+        @media (max-width: 768px) {
+            padding: 15px 0;
+
+            ul {
+                li {
+                    display: block;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+
+    .back-to-top {
+        position: fixed; // Fijo en la ventana
+        bottom: 20px; // Espacio desde la parte inferior
+        right: 20px; // Espacio desde el lado derecho
+        background-color: rgba(0, 95, 95, 0.7); // Color de fondo translúcido
+        color: $colorsecundario; // Color del texto
+        padding: 10px 15px; // Espaciado interno
+        border-radius: 50%; // Bordes redondeados para que parezca un círculo
+        text-align: center; // Centra el texto
+        text-decoration: none; // Sin subrayado
+        font-size: 18px; // Tamaño de fuente
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); // Sombra para darle profundidad
+        transition: background-color 0.3s ease; // Efecto de transición para hover
+
+        &:hover {
+            background-color: rgba(0, 95, 95, 0.9); // Cambio de color al hacer hover
+        }
+
+        // Para dispositivos pequeños
+        @media (max-width: 768px) {
+            bottom: 15px; // Ajusta la posición en dispositivos pequeños
+            right: 15px;
+        }
+    }
+
+    // Media queries adicionales para mejorar la responsividad
+    @media (max-width: 1200px) {
+        header {
+            h1 {
+                font-size: 2em; // Disminuir tamaño de fuente en pantallas medianas
+            }
+        }
+    }
+
+    @media (max-width: 992px) {
+        nav ul {
+            flex-direction: column; // Cambiar a columna para el menú en pantallas pequeñas
+        }
+
+        nav ul li {
+            display: block; // Cambia a bloque para una mejor disposición en pantallas pequeñas
+            margin: 10px 0; // Ajuste del margen
+        }
+
+        main {
+            padding: 15px; // Reducir padding en el main
+        }
+
+        section {
+            padding: 15px; // Reducir padding en secciones
+        }
+
+        footer {
+            p {
+                font-size: 0.9em; // Disminuir el tamaño de fuente
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        h1 {
+            font-size: 1.5em; // Disminuir tamaño de fuente del título en pantallas pequeñas
+        }
+
+        footer {
+            p {
+                font-size: 0.8em; // Disminuir aún más el tamaño de fuente
+            }
+        }
+    }
+}
+
+
